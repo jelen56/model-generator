@@ -25,7 +25,6 @@ public class GeneratorTest {
     @Test
     public void testSave() {
         BlogAuthor blogAuthor = ModelBuilder.generator(BlogAuthor.class);
-//        Mockito.when(authorDao.save(blogAuthor)).thenReturn(blogAuthor.getId());
         Assert.assertEquals(blogAuthor.getId(), authorDao.save(blogAuthor).longValue());
         Mockito.verify(authorDao, Mockito.times(1)).save(blogAuthor);
     }

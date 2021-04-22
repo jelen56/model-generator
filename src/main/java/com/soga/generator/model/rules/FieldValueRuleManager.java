@@ -8,6 +8,7 @@ import java.lang.reflect.Modifier;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Optional;
 
 /**
  * @description: FieldValueRule规则管理
@@ -15,13 +16,7 @@ import java.util.List;
  * @create: 2021-02-26 15:17
  */
 public class FieldValueRuleManager {
-    private static RuleFactory ruleFactory = null;
-
-    static {
-        if (ruleFactory == null) {
-            ruleFactory = new FieldValueRuleFactory();
-        }
-    }
+    private static RuleFactory ruleFactory = new FieldValueRuleFactory();
 
     /***
      * @Description: 新增规则

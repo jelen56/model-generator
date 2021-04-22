@@ -11,17 +11,13 @@ import java.util.stream.Stream;
  * @create: 2021-02-28 02:34
  */
 public class FieldValueRuleFactory implements RuleFactory {
-    private static Map<Class, List<RuleAction>> actionMap = new HashMap<>();
+    private final Map<Class, List<RuleAction>> actionMap = new HashMap<>();
 
-    static {
-        init();
+    public FieldValueRuleFactory() {
+        this.init();
     }
 
-    private static void init() {
-        doInit();
-    }
-
-    private static void doInit() {
+    private void init() {
         Arrays.asList(RuleFieldType.values()).forEach(ruleFieldType -> {
             RuleAction[] ruleActions = ruleFieldType.instance();
             Stream.of(ruleActions).forEach(ruleAction -> {
@@ -37,10 +33,9 @@ public class FieldValueRuleFactory implements RuleFactory {
     public List<RuleAction> getRuleAction(Class ruleClass) {
         List<RuleAction> ruleActions = new ArrayList<>();
         RuleFieldType ruleFieldType = RuleFieldType.getField(ruleClass);
-        if(ruleFieldType!=null){
-            Class[] classes=ruleFieldType.get();
-            for(Class cl:classes)
-            {
+        if (ruleFieldType != null) {
+            Class[] classes = ruleFieldType.get();
+            for (Class cl : classes) {
                 ruleActions.addAll(actionMap.get(cl));
             }
         }

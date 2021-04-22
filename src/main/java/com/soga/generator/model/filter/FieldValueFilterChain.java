@@ -16,7 +16,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
  * @create: 2021-02-24 00:36
  */
 public class FieldValueFilterChain {
-    private static List<FieldValueFilter> fieldValueFilters = new ArrayList();
+    private final List<FieldValueFilter> fieldValueFilters = new ArrayList();
 
 
     public void add(FieldValueFilter fieldValueFilter) {

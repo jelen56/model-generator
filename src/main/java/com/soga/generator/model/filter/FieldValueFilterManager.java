@@ -9,11 +9,7 @@ import java.util.Optional;
  * @create: 2021-02-24 02:32
  */
 public class FieldValueFilterManager {
-    private static FieldValueFilterChain fieldValueFilterChain;
-
-    static {
-        fieldValueFilterChain = Optional.ofNullable(fieldValueFilterChain).orElse(new FieldValueFilterChain());
-    }
+    private static FieldValueFilterChain fieldValueFilterChain=new FieldValueFilterChain();
 
     public static void init() {
         fieldValueFilterChain.add(new StringFieldValueFilter());

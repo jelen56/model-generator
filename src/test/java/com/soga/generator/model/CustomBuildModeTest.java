@@ -3,7 +3,6 @@ package com.soga.generator.model;
 import com.soga.generator.model.config.CommonConfig;
 import com.soga.generator.model.rules.FieldValueRuleManager;
 import com.soga.generator.model.rules.StringFieldValueRule;
-import com.soga.generator.model.rules.WholeNumberFieldValueRule;
 import com.soga.generator.test.dao.AuthorDao;
 import com.soga.generator.test.dao.impl.AuthorDaoImpl;
 import com.soga.generator.test.entity.BlogAuthor;
